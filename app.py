@@ -70,7 +70,7 @@ def edit(id):
 
     return render_template('edit.html', post=post)
 
-@app.route('/<int:id>/delete', methods=('POST',))
+@app.route('/<int:id>/delete', methods=('GET','POST'))
 def delete(id):
     post = get_post(id)
     conn = get_db_connection()
