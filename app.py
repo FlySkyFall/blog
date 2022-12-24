@@ -26,6 +26,10 @@ def index():
     conn.close()
     return render_template('index.html', posts=posts)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/<int:post_id>')
 def post(post_id):
     post = get_post(post_id)
@@ -70,7 +74,7 @@ def edit(id):
 
     return render_template('edit.html', post=post)
 
-@app.route('/<int:id>/delete', methods=('GET','POST'))
+@app.route('/secret_key/<int:id>/delete', methods=('GET','POST'))
 def delete(id):
     post = get_post(id)
     conn = get_db_connection()
