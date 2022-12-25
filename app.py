@@ -84,4 +84,4 @@ def delete(id):
     flash('"{}" был успешно удалён!'.format(post['title']))
     return redirect(url_for('index'))
 
-app.run()
+app.run(debug=True)
