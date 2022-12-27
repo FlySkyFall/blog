@@ -84,4 +84,6 @@ def delete(id):
     flash('"{}" был успешно удалён!'.format(post['title']))
     return redirect(url_for('index'))
 
+app.config.from_object(Config)
+app.config.update(dict(DATABASE=os.path.join(app.root_path, 'database.db')))
 app.run(debug=True)
